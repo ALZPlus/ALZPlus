@@ -1,0 +1,50 @@
+
+div {
+border: 1px solid black;
+background-color:rgb(98, 46, 224);
+padding:10px;
+margin-top: 20px;
+margin-bottom: 20px;
+border-radius: 5px;
+font-family:"Helvetica", "arial black", "arial", sans-serif;
+color: white;
+font-weight: bolder;
+font-size:80px;
+text-align: center;
+height: 150px;
+}
+h1 {
+  font-weight:bold;
+  font-family:"Helvetica", "arial black", "arial", sans-serif;
+  color: rgb(98, 46, 224);
+  text-align:center;
+  font-size: 75px;
+}
+
+[id="people"] {
+  background-image: url("people.png");
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: 5% 25%;
+}
+
+[id=things] {
+  background-image: url("things.png");
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+  [id=reminders]{
+    background-image: url("reminders.png");
+    background-size: 11%,auto;
+    background-repeat: no-repeat;
+    background-position: 5% 75%;
+  }
+
+  [id=clock]{
+    background-image: url("sun.png");
+    background-size: 15%,auto;
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+  }
