@@ -1,5 +1,5 @@
 var people_button = document.getElementById("people")
-var main_menu= document.getElementsByTagName("main_menu")[0]
+var main_menu= document.getElementById("main_menu")
 var people_screen= document.getElementById("people_screen")
 
 people_button.addEventListener("click", function() {
