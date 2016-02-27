@@ -7,50 +7,46 @@
       <link rel="stylesheet" href="homescreen.css"/>
       <meta http-equiv="Pragma" content="no-cache"/>
       <meta http-equiv="Expires" content="-1"/>
+      <script src="collection_manager.js"></script>
   </head>
-
   <body>
     <h1> ALZ+ </h1>
-
-
     <div id= "people_screen" style="display:none">
-
-        <img src= "shibangi.jpg" width/>
-        <img src= "liliana.jpg" width="100%"/>
-        <button id=Back> Back </button>
-
-        <button> Tap to show </button>
-
+      <div class="person">
+        <img src= "shibangi.jpg"/>
+      </div>
+      
+      <div class="person">
+        <img src= "liliana.jpg"/>
+      </div>
+      <button id=Back> Back </button>
+      <button> Tap to show </button>
     </div>
+    <main_menu id=menu>
+      <div id=people>
+        People
+      </div>
 
-<main_menu id=menu>
-    <div id=people>
-      People
-    </div>
+      <div id= things>
+        Things
+      </div>
 
-    <div id= things>
-      Things
-    </div>
+      <div id=reminders>
+        Reminders
+      </div>
 
-    <div id=reminders>
-      Reminders
-    </div>
+      <div>
+        Help
+      </div>
 
-    <div>
-      Help
-    </div>
+      <div>
+        Medical ID
+      </div>
 
-    <div>
-      Medical ID
-    </div>
-
-    <div id=clock>
-      Clock
-    </div>
-
+      <div id=clock>
+        Clock
+      </div>
     </main_menu>
-
     <script src="home_screen.js"></script>
   </body>
-
 </html>

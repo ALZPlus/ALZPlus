@@ -28,6 +28,17 @@ h1 {
   background-position: 5% 25%;
 }
 
+[id="people_screen"] div[class="person"] {
+  width: 40%;
+  border: 1px solid black;
+  display: inline-block;
+  background: white;
+}
+
+[id="people_screen"] div[class="person"] img {
+  width: 100%;
+}
+
 [id=things] {
   background-image: url("things.png");
   background-size: 25%;
