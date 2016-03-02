@@ -2,17 +2,15 @@
 <html>
   <head>
       <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name = "viewport" content = "device-width, initial-scale = 1.0, user-scalable = no">
+      <meta name = "viewport" content = "width=device-width, initial-scale=1.0, user-scalable=no">
       <link rel="apple-touch-icon" href="icon.png">
       <link rel="stylesheet" href="homescreen.css"/>
       <meta http-equiv="Pragma" content="no-cache"/>
       <meta http-equiv="Expires" content="-1"/>
+      <script src="collection_manager.js"></script>
   </head>
-
   <body>
     <h1> ALZ+ </h1>
-
-
     <div id= "people_screen" style="display:none">
       <div class="person">
         <img src= "IsaDad.JPG" width= "100%"/>
@@ -37,15 +35,21 @@
 
     </div>
 
-<main_menu id=menu>
-    <div id=people>
-      People
+        <img src= "shibangi.jpg"/>
+      </div>
+      
+      <div class="person">
+        <img src= "liliana.jpg"/>
+      </div>
+      <button id=back> Back </button>
+      <button> Tap to show </button>
     </div>
+    <main_menu id=menu>
+      <div id=people>
+        People
+      </div>
 
-    <div id= things>
-      Things
-    </div>
-
+<<<<<<< HEAD
 
     <div id=reminders>
       Reminders
@@ -58,14 +62,29 @@
     <div id=medical>
       Medical ID
     </div>
+=======
+      <div id= things>
+        Things
+      </div>
 
-    <div id=clock>
-      Clock
-    </div>
+      <div id=reminders>
+        Reminders
+      </div>
 
+      <div>
+        Help
+      </div>
+>>>>>>> origin/master
+
+      <div>
+        Medical ID
+      </div>
+
+      <div id=clock>
+        Clock
+      </div>
     </main_menu>
-
     <script src="homescreen.js"></script>
-  </body>
 
+  </body>
 </html>
