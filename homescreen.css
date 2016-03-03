@@ -1,6 +1,6 @@
 
 
-div {
+button {
   border: 1px solid black;
   background-color:rgb(98, 46, 224);
   padding:10px;
@@ -13,7 +13,10 @@ div {
   font-size:80px;
   text-align: center;
   height: 150px;
-  }
+  display: block;
+  width: 100%;
+  padding-left: 30px;
+}
 h1 {
     font-weight:bolder;
     font-family:"Calibri", "arial black", "arial", sans-serif;
@@ -31,14 +34,14 @@ h1 {
   background-position: 5% 25%;
 }
 
-[id="people_screen"] div[class="person"] {
+[id="people_screen"] [class="person"] {
   width: 40%;
   border: 1px solid black;
   display: inline-block;
   background: white;
 }
 
-[id="people_screen"] div[class="person"] img {
+[id="people_screen"] [class="person"] img {
   width: 100%;
 }
 

@@ -7,68 +7,104 @@
       <link rel="stylesheet" href="homescreen.css"/>
       <meta http-equiv="Pragma" content="no-cache"/>
       <meta http-equiv="Expires" content="-1"/>
+      <script src="vue.js"></script>
       <script src="collection_manager.js"></script>
   </head>
   <body>
     <h1> ALZ+ </h1>
-    <div id= "people_screen" style="display:none">
-      <div class="person">
-
-        <img src= "IsaDad.JPG" width= "100%"/>
+    <div id="people_screen" style="display:none">
+      <button id="back"> Back </button>  
+      <!--<div class="person">
+        <img src="IsaDad.JPG"/>
+        <div class="Name"> IsaDad </div>
         <div class="Title"> Son </div>
-
-
-        <img src= "IsaMom.JPG" width="100%"/>
-        <div class= "Title"> Daughter-in-Law </div>
-
-
-        <img src= "Isa.JPG" width= "100%" />
-        <div class= "Title"> Granddaughter </div>
-
-        <img scr= "Ruben-ALZ" width="100%" />
-        <div class= "Title"> Family Friend </div>
-
-
-        <button id=back> Back </button>
-    </div>
-
-        <button> Tap to show </button>
-
-    </div>
-        <img src= "shibangi.jpg"/>
       </div>
       <div class="person">
-        <img src= "liliana.jpg"/>
+        <img src="IsaMom.JPG" />
+        <div class= "Name"> Liliana </div>
+        <div class= "Title"> Daughter-in-Law </div>
       </div>
-      <button id=back> Back </button>
-      <button> Tap to show </button>
+      <div class="person">
+        <img src="Isa.JPG"/>
+        <div class= "Name"> Isabella </div>
+        <div class= "Title"> Granddaughter </div>
+      </div>
+      <div class="person">
+        <img src="Ruben-ALZ.jpg"/>
+        <div class= "Name"> Ruben </div>
+        <div class= "Title"> Family Friend </div>
+      </div>-->
+      <div class="person" v-for="object in objects">
+        <span>{{object.name}}</span>
+        <span>{{object.title}}
+        <img v-bind:src="object.photo"/>
+      </div>
+      
+      <button id="show"> Tap to show </button>
+      <form id="add_person">
+        <input v-model="name" type="text" placeholder="Name"/>
+        <input v-model="title" type="text" placeholder="Title"/>
+        <input type="file" id="file"/>
+        <button v-on:click="add">Add</button>
+      </form>
     </div>
     <main_menu id=menu>
-      <div id=people>
+      <button id=people>
         People
-      </div>
-
-      <div id= things>
+      </button>
+      <button id= things>
         Things
-      </div>
-
-      <div id=reminders>
+      </button>
+      <button id=reminders>
         Reminders
-      </div>
-
-      <div>
+      </button>
+      <button id="help">
         Help
-      </div>
-
-
-      <div>
+      </button>
+      <button id="help">
         Medical ID
-      </div>
-
-      <div id=clock>
+      </button>
+      <button id="clock">
         Clock
-      </div>
+      </button>
     </main_menu>
+    <div id= "things_screen" style="display:none">
+      <button id="back"> Back </button>  
+      <div class="person">
+        <img src= "IsaDad.JPG"/>
+        <div class="Name"> IsaDad </div>
+        <div class="Title"> Son </div>
+      </div>
+      <div class="person">
+        <img src= "IsaMom.JPG" />
+        <div class= "Name"> Liliana </div>
+        <div class= "Title"> Daughter-in-Law </div>
+      </div>
+      <div class="person">
+        <img src= "Isa.JPG"/>
+        <div class= "Name"> Isabella </div>
+        <div class= "Title"> Granddaughter </div>
+      </div>
+      <div class="person">
+        <img src= "Ruben-ALZ.jpg"/>
+        <div class= "Name"> Ruben </div>
+        <div class= "Title"> Family Friend </div>
+      </div>
+      <div class="person" v-for="object in objects">
+        <span>{{object.name}}</span>
+        <span>{{object.title}}
+        <img v-bind:src="object.photo"/>
+      </div>
+      
+      <button id="show"> Tap to show </button>
+      <form id="add_thing">
+        <input v-model="name" type="text" placeholder="Name"/>
+        <input v-model="title" type="text" placeholder="Title"/>
+        <input type="file" id="file"/>
+        <button v-on:click="add">Add</button>
+      </form>
+    </div>
+    
     <script src="homescreen.js"></script>
   </body>
 </html>
