@@ -13,33 +13,14 @@
   <body>
     <h1> ALZ+ </h1>
     <div id="people_screen" style="display:none">
-      <button id="back"> Back </button>  
-      <!--<div class="person">
-        <img src="IsaDad.JPG"/>
-        <div class="Name"> IsaDad </div>
-        <div class="Title"> Son </div>
-      </div>
-      <div class="person">
-        <img src="IsaMom.JPG" />
-        <div class= "Name"> Liliana </div>
-        <div class= "Title"> Daughter-in-Law </div>
-      </div>
-      <div class="person">
-        <img src="Isa.JPG"/>
-        <div class= "Name"> Isabella </div>
-        <div class= "Title"> Granddaughter </div>
-      </div>
-      <div class="person">
-        <img src="Ruben-ALZ.jpg"/>
-        <div class= "Name"> Ruben </div>
-        <div class= "Title"> Family Friend </div>
-      </div>-->
+      <button id="back"> Back </button>
+
       <div class="person" v-for="object in objects">
         <span>{{object.name}}</span>
         <span>{{object.title}}
         <img v-bind:src="object.photo"/>
       </div>
-      
+
       <button id="show"> Tap to show </button>
       <form id="add_person">
         <input v-model="name" type="text" placeholder="Name"/>
@@ -61,7 +42,7 @@
       <button id="help">
         Help
       </button>
-      <button id="help">
+      <button id="medical">
         Medical ID
       </button>
       <button id="clock">
@@ -69,7 +50,7 @@
       </button>
     </main_menu>
     <div id= "things_screen" style="display:none">
-      <button id="back"> Back </button>  
+      <button id="back"> Back </button>
       <div class="person">
         <img src= "IsaDad.JPG"/>
         <div class="Name"> IsaDad </div>
@@ -95,7 +76,7 @@
         <span>{{object.title}}
         <img v-bind:src="object.photo"/>
       </div>
-      
+
       <button id="show"> Tap to show </button>
       <form id="add_thing">
         <input v-model="name" type="text" placeholder="Name"/>
@@ -104,7 +85,7 @@
         <button v-on:click="add">Add</button>
       </form>
     </div>
-    
+
     <script src="homescreen.js"></script>
   </body>
 </html>
