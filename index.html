@@ -8,35 +8,32 @@
       <meta http-equiv="Pragma" content="no-cache"/>
       <meta http-equiv="Expires" content="-1"/>
       <script src="vue.js"></script>
-      <script src="collection_manager.js"></script>
+      <script src="collection_manager.es6.js"></script>
   </head>
   <body>
     <h1> ALZ+ </h1>
     <div id="people_screen" style="display:none">
       <button id="back"> Back </button>
-
-      <div class="person" v-for="object in objects">
-        <span>{{object.name}}</span>
-        <span>{{object.title}}
-        <img v-bind:src="object.photo"/>
+      
+      <div id="people_list">
+        <div class="person" v-for="object in objects">
+          <span>{{object.name }}</span>
+          <span>{{object.title}}</span>
+          <img v-bind:src="object.photo"/>
+        </div>
       </div>
 
       <button id="show"> Tap to show </button>
-      <form id="add_person">
-        <input v-model="name" type="text" placeholder="Name"/>
-        <input v-model="title" type="text" placeholder="Title"/>
-        <input type="file" id="file"/>
-        <button v-on:click="add">Add</button>
-      </form>
     </div>
-    <main_menu id=menu>
-      <button id=people>
+    
+    <main_menu id="menu">
+      <button id="people">
         People
       </button>
-      <button id= things>
+      <button id= "things">
         Things
       </button>
-      <button id=reminders>
+      <button id="reminders">
         Reminders
       </button>
       <button id="help">
@@ -48,21 +45,46 @@
       <button id="clock">
         Clock
       </button>
+      <button id="settings">
+        Settings
+      </button>
     </main_menu>
+    
+    <div id="settings_screen" style="display:none">
+      Add Person:
+      <form id="add_person">
+        <input v-model="name"  type="text" placeholder="Name" />
+        <input v-model="title" type="text" placeholder="Title"/>
+        <input type="file" id="file"/>
+        <button v-on:click="add">Add</button>
+      </form>
+      
+      <button id="reset_people">Reset People</button>
+      Add Thing:
+      <form id="add_thing">
+        <input v-model="name" type="text" placeholder="Name"/>
+        <input v-model="title" type="text" placeholder="Title"/>
+        <input type="file" id="file"/>
+        <button v-on:click="add">Add</button>
+      </form>
+      
+      <button id="reset_things">Reset Things</button>
+    </div>
+    
     <div id= "things_screen" style="display:none">
       <button id="back"> Back </button>
       <div class="person">
-        <img src= "IsaDad.JPG"/>
+        <img src= "IsaDad.jpg"/>
         <div class="Name"> IsaDad </div>
         <div class="Title"> Son </div>
       </div>
       <div class="person">
-        <img src= "IsaMom.JPG" />
+        <img src= "IsaMom.jpg" />
         <div class= "Name"> Liliana </div>
         <div class= "Title"> Daughter-in-Law </div>
       </div>
       <div class="person">
-        <img src= "Isa.JPG"/>
+        <img src= "Isa.jpg"/>
         <div class= "Name"> Isabella </div>
         <div class= "Title"> Granddaughter </div>
       </div>
@@ -76,16 +98,8 @@
         <span>{{object.title}}
         <img v-bind:src="object.photo"/>
       </div>
-
       <button id="show"> Tap to show </button>
-      <form id="add_thing">
-        <input v-model="name" type="text" placeholder="Name"/>
-        <input v-model="title" type="text" placeholder="Title"/>
-        <input type="file" id="file"/>
-        <button v-on:click="add">Add</button>
-      </form>
     </div>
-
     <script src="homescreen.js"></script>
   </body>
 </html>

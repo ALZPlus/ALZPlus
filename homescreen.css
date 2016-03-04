@@ -1,6 +1,4 @@
-
-
-button {
+#menu button {
   border: 1px solid black;
   background-color:rgb(98, 46, 224);
   padding:10px;
@@ -31,12 +29,22 @@ h1 {
   background-image: url("Peoplejpg.gif");
   background-size: 15%;
   background-repeat: no-repeat;
-  background-position: 5% 25%;
+  background-position: 5% 25%; 
+}
+
+[id="people_list"]{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 [id="people_screen"] [class="person"] {
-  width: 40%;
+  width:  calc(100% * (1/2) - 22px);
+  flex-grow: 1;
+  flex-shrink: 1;
   border: 1px solid black;
+  padding: 10px;
   display: inline-block;
   background: white;
 }
@@ -52,30 +60,30 @@ h1 {
   background-position: 5% 50%;
 }
 
-  [id=reminders]{
-    background-image: url("Clock.png");
-    background-size: 8%,auto;
-    background-repeat: no-repeat;
-    background-position: 10% 55%;
-  }
+[id=reminders]{
+  background-image: url("Clock.png");
+  background-size: 8%,auto;
+  background-repeat: no-repeat;
+  background-position: 10% 55%;
+}
 
-  [id=clock]{
-    background-image: url("sun.png");
-    background-size: 15%,auto;
-    background-repeat: no-repeat;
-    background-position: 5% 50%;
-  }
+[id=clock]{
+  background-image: url("sun.png");
+  background-size: 15%,auto;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
 
-  [id=help]{
-    background-image: url("Help.png");
-    background-size: 10%, auto;
-    background-repeat: no-repeat;
-    background-position: 10% 50%;
-  }
+[id=help]{
+  background-image: url("Help.png");
+  background-size: 10%, auto;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+}
 
-  [id=medical] {
-    background-image:url("Medical.png");
-    background-size: 8%; auto;
-    background-repeat:no-repeat;
-    background-position: 12% 50%;
-  }
+[id=medical] {
+  background-image:url("Medical.png");
+  background-size: 8% auto;
+  background-repeat:no-repeat;
+  background-position: 12% 50%;
+}

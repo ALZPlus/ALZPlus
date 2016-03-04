@@ -1,0 +1,28 @@
+<script src="vue.js"></script>
+<script src="collection_manager.es6.js"></script>
+<div id="people">
+  <div class="person" v-for="object in objects">
+    <span>{{object.name}}</span>
+    <span>{{object.title}}</span>
+    <img v-bind:src="object.photo"/>
+  </div>
+</div>
+
+<form id="add_person">
+  <input v-model="name" type="text"/>
+  <input v-model="title" type="text"/>
+  <input type="file" id="file"/>
+  <button v-on:click="add">Add</button>
+</form>
+
+<script>
+  window.people = new CollectionManager({
+      name: 'people',
+      fields: ['name', 'title'],
+      photo: true,
+      list: document.querySelector('#people'),
+      new_form: document.querySelector("#add_person")
+  })
+
+  people.restore()
+</script>
