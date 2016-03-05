@@ -39,10 +39,28 @@ var people = new CollectionManager({
 
 people.restore()
 
+var things = new CollectionManager({
+  name: 'things',
+  fields: ['name'],
+  photo: true,
+  list: document.querySelector('#things_list'),
+  new_form: document.querySelector("#add_thing")
+})
+
+things.restore()
+
 var reset_people_button = document.getElementById("reset_people")
 reset_people_button.addEventListener('click', function(event){
   event.preventDefault()
   
   localStorage.removeItem("people")
   alert("People List Reset")
+})
+
+var reset_things_button = document.getElementById("reset_things")
+reset_things_button.addEventListener('click', function(event){
+  event.preventDefault()
+  
+  localStorage.removeItem("things")
+  alert("Things List Reset")
 })
