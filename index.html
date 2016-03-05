@@ -14,7 +14,7 @@
     <h1> ALZ+ </h1>
     <div id="people_screen" style="display:none">
       <button id="back"> Back </button>
-      
+
       <div id="people_list">
         <div class="person" v-for="object in objects">
           <span>{{object.name }}</span>
@@ -25,6 +25,7 @@
 
       <button id="show"> Tap to show </button>
     </div>
+<<<<<<< Updated upstream
     
     <div id= "things_screen" style="display:none">
       <button id="back"> Back </button>
@@ -37,6 +38,9 @@
       <button id="show"> Tap to show </button>
     </div>
     
+=======
+
+>>>>>>> Stashed changes
     <main_menu id="menu">
       <button id="people">
         People
@@ -51,7 +55,7 @@
         Help
       </button>
       <button id="medical">
-        Medical ID
+        About Me
       </button>
       <button id="clock">
         Clock
@@ -60,7 +64,7 @@
         Settings
       </button>
     </main_menu>
-    
+
     <div id="settings_screen" style="display:none">
       Add Person:
       <form id="add_person">
@@ -69,7 +73,7 @@
         <input type="file" id="file"/>
         <button v-on:click="add">Add</button>
       </form>
-      
+
       <button id="reset_people">Reset People</button>
       Add Thing:
       <form id="add_thing">
@@ -77,9 +81,42 @@
         <input type="file" id="file"/>
         <button v-on:click="add">Add</button>
       </form>
-      
+
       <button id="reset_things">Reset Things</button>
     </div>
+<<<<<<< Updated upstream
+=======
+
+    <div id= "things_screen" style="display:none">
+      <button id="back"> Back </button>
+      <div class="person">
+        <img src= "IsaDad.jpg"/>
+        <div class="Name"> IsaDad </div>
+        <div class="Title"> Son </div>
+      </div>
+      <div class="person">
+        <img src= "IsaMom.jpg" />
+        <div class= "Name"> Liliana </div>
+        <div class= "Title"> Daughter-in-Law </div>
+      </div>
+      <div class="person">
+        <img src= "Isa.jpg"/>
+        <div class= "Name"> Isabella </div>
+        <div class= "Title"> Granddaughter </div>
+      </div>
+      <div class="person">
+        <img src= "Ruben-ALZ.jpg"/>
+        <div class= "Name"> Ruben </div>
+        <div class= "Title"> Family Friend </div>
+      </div>
+      <div class="person" v-for="object in objects">
+        <span>{{object.name}}</span>
+        <span>{{object.title}}
+        <img v-bind:src="object.photo"/>
+      </div>
+      <button id="show"> Tap to show </button>
+    </div>
+>>>>>>> Stashed changes
     <script src="homescreen.js"></script>
   </body>
 </html>
