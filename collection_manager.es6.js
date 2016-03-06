@@ -3,7 +3,15 @@
 class CollectionManager {
   constructor(config) {
     this.objects = [];
-    this.list = new Vue({ el: config.list, data: { objects: this.objects } });
+    this.list = new Vue({ 
+      el: config.list, 
+      data: { objects: this.objects },
+      methods: {
+        display: function(event){
+          event.target.parentNode.classList.toggle('displayed')
+        }
+      } 
+    })
     this.name = config.name;
     var new_object = {};
     config.fields.forEach(function (property) {

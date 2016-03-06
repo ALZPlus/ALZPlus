@@ -17,9 +17,11 @@
       
       <div id="people_list">
         <div class="person" v-for="object in objects">
-          <span>{{object.name }}</span>
-          <span>{{object.title}}</span>
-          <img v-bind:src="object.photo"/>
+          <img v-bind:src="object.photo" v-on:click="display"/>
+          <div class="info">
+            <div class="name">{{object.name }}</div>
+            <div class="title">{{object.title}}</div>
+          </div>
         </div>
       </div>
 
@@ -30,8 +32,8 @@
       <button id="back"> Back </button>
       <div id="things_list">
         <div class="thing" v-for="object in objects">
-          <span>{{object.name}}</span>
           <img v-bind:src="object.photo"/>
+          <div class='name'>{{object.name}}</div>
         </div>
       </div>
       <button id="show"> Tap to show </button>
@@ -51,7 +53,7 @@
         Help
       </button>
       <button id="medical">
-        Medical ID
+        About Me
       </button>
       <button id="clock">
         Clock
@@ -60,6 +62,13 @@
         Settings
       </button>
     </main_menu>
+    
+    <div id="help_screen" style="display:none">
+      <div class="emergency_contact" v-for="object in objects">
+        <div class="name">{{object.name }}</div>
+        <div class="phone">{{object.phone}}</div>
+      </div>
+    </div>
     
     <div id="settings_screen" style="display:none">
       Add Person:
@@ -79,6 +88,14 @@
       </form>
       
       <button id="reset_things">Reset Things</button>
+       Add Emergency Contact:
+      <form id="add_contact">
+        <input v-model="name" type="text" placeholder="Name"/>
+        <input v-model="phone" type="text" placeholder="Phone"/>
+        <button v-on:click="add">Add</button>
+      </form>
+      
+      <button id="reset_contacts">Reset Emergency Contacts</button>
     </div>
     <script src="homescreen.js"></script>
   </body>
