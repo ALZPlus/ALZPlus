@@ -22,7 +22,7 @@ class CollectionManager {
     this.name = config.name;
     var new_object = {};
     config.fields.forEach(function (property) {
-      new_object[property] = property;
+      new_object[property] = null;
     });
     var manager = this
     
@@ -39,6 +39,7 @@ class CollectionManager {
           new_object.photo = reader.result
           manager.objects.push(new_object);
           localStorage.setItem(config.name, JSON.stringify(manager.objects));
+          alert((new_object.name || 'Object') + ' added')
         }.bind(this), false);
       } else {
           var new_object = {};
@@ -47,6 +48,7 @@ class CollectionManager {
           }.bind(this));
           manager.objects.push(new_object);
           localStorage.setItem(config.name, JSON.stringify(manager.objects));
+          alert((new_object.name || 'Object') + ' added')
       }
     }
 

@@ -6,7 +6,13 @@ var things_button= document.getElementById ("things")
 var help_button = document.getElementById("help")
 var settings_button=document.getElementById("settings")
 
+var clock = document.getElementById('clock')
 var current_screen = null
+
+setInterval(function(){
+  var now = new Date()
+  clock.textContent = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+}, 1000)
 
 Vue.filter('tel', function (value) {
   return 'tel://' + value
