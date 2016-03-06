@@ -3,13 +3,20 @@
 class CollectionManager {
   constructor(config) {
     this.objects = [];
+    if(config.display){
+      this.object_display = config.display
+      this.object_display.addEventListener('click', function(){
+        this.object_display.style.display = 'none'
+      }.bind(this))
+    }
     this.list = new Vue({ 
       el: config.list, 
       data: { objects: this.objects },
       methods: {
         display: function(event){
-          event.target.parentNode.classList.toggle('displayed')
-        }
+          event.target.classList.toggle('display')
+          event.target.parentNode.classList.toggle('display')
+        }.bind(this)
       } 
     })
     this.name = config.name;

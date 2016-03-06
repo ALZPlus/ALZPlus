@@ -1,45 +1,47 @@
 var main_menu= document.getElementById("menu")
 
-var people_screen= document.getElementById("people_screen")
-var things_screen= document.getElementById("things_screen")
-var help_screen= document.getElementById("help_screen")
-var settings_screen=document.getElementById("settings_screen")
-
 var back= document.getElementById("back")
 var people_button = document.getElementById("people")
 var things_button= document.getElementById ("things")
 var help_button = document.getElementById("help")
 var settings_button=document.getElementById("settings")
 
-people_button.addEventListener("click", function() {
+var current_screen = null
+
+function switchToScreen(screen_name){
+  current_screen = document.getElementById(screen_name)
   main_menu.style.display = "none"
-  people_screen.style.display = ""
+  current_screen.style.display = ""
+  back.style.display = ""
+}
+
+people_button.addEventListener("click", function() {
+  switchToScreen('people_screen')
 })
 
 things_button.addEventListener("click", function (){
-  main_menu.style.display= "none"
-  things_screen.style.display= ""
+  switchToScreen('things_screen')
 })
 
 help_button.addEventListener("click", function() {
-  main_menu.style.display = "none"
-  help_screen.style.display = ""
+  switchToScreen('help_screen')
 })
 
 settings_button.addEventListener("click", function (){
-  main_menu.style.display= "none"
-  settings_screen.style.display= ""
+  switchToScreen('settings_screen')
 })
 
 back.addEventListener("click", function() {
-  main_menu.style.display = "block"
-  people_screen.style.display="none"
+  main_menu.style.display = ""
+  current_screen.style.display="none"
+  back.style.display = "none"
 })
 
 var people = new CollectionManager({
   name: 'people',
   fields: ['name', 'title'],
   photo: true,
+  display: document.querySelector('#person_display'),
   list: document.querySelector('#people_list'),
   new_form: document.querySelector("#add_person")
 })

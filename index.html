@@ -12,31 +12,24 @@
   </head>
   <body>
     <h1> ALZ+ </h1>
+    <button id="back" style="display:none"> Back </button>
     <div id="people_screen" style="display:none">
-      <button id="back"> Back </button>
-
-      <div id="people_list">
-        <div class="person" v-for="object in objects">
-          <img v-bind:src="object.photo" v-on:click="display"/>
+      <div id="people_list" class="object_list">
+        <div class="person object" v-for="object in objects" v-on:click="display" v-bind:style="'background-image: url(' + object.photo + ')'">
           <div class="info">
             <div class="name">{{object.name }}</div>
             <div class="title">{{object.title}}</div>
           </div>
         </div>
       </div>
-
-      <button id="show"> Tap to show </button>
     </div>
     
     <div id= "things_screen" style="display:none">
-      <button id="back"> Back </button>
-      <div id="things_list">
-        <div class="thing" v-for="object in objects">
-          <img v-bind:src="object.photo"/>
-          <div class='name'>{{object.name}}</div>
+      <div id="things_list" class="object_list">
+        <div class="thing object" v-for="object in objects" v-on:click="display" v-bind:style="'background-image: url(' + object.photo + ')'">
+          <div class='name info'>{{object.name}}</div>
         </div>
       </div>
-      <button id="show"> Tap to show </button>
     </div>
     
     <main_menu id="menu">
@@ -69,6 +62,7 @@
         <div class="phone">{{object.phone}}</div>
       </div>
     </div>
+    
     <div id="settings_screen" style="display:none">
       Add Person:
       <form id="add_person">
