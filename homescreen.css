@@ -193,3 +193,12 @@ h1 {
   font-family: "Calibri", "arial black", "arial", sans-serif;
   font-size: 18px; 
 } 
+
+#about_screen{
+    font-family: "Calibri", "arial black", "arial", sans-serif;
+  font-size: 36px; 
+}
+
+#about_screen > div > * {
+  border-bottom: 1px solid #EEE;
+}
