@@ -17,9 +17,11 @@
 
       <div id="people_list">
         <div class="person" v-for="object in objects">
-          <span>{{object.name }}</span>
-          <span>{{object.title}}</span>
-          <img v-bind:src="object.photo"/>
+          <img v-bind:src="object.photo" v-on:click="display"/>
+          <div class="info">
+            <div class="name">{{object.name }}</div>
+            <div class="title">{{object.title}}</div>
+          </div>
         </div>
       </div>
 
@@ -30,8 +32,8 @@
       <button id="back"> Back </button>
       <div id="things_list">
         <div class="thing" v-for="object in objects">
-          <span>{{object.name}}</span>
           <img v-bind:src="object.photo"/>
+          <div class='name'>{{object.name}}</div>
         </div>
       </div>
       <button id="show"> Tap to show </button>
@@ -60,13 +62,24 @@
         Settings
       </button>
     </main_menu>
+<<<<<<< HEAD
 
+<<<<<<< HEAD
+=======
+=======
+    
+>>>>>>> parent of 751bca4... Revert "Merge remote-tracking branch 'origin/master'"
     <div id="help_screen" style="display:none">
       <div class="emergency_contact" v-for="object in objects">
         <div class="name">{{object.name }}</div>
         <div class="phone">{{object.phone}}</div>
       </div>
     </div>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/master
+>>>>>>> parent of 751bca4... Revert "Merge remote-tracking branch 'origin/master'"
     <div id="settings_screen" style="display:none">
       Add Person:
       <form id="add_person">
@@ -85,6 +98,14 @@
       </form>
 
       <button id="reset_things">Reset Things</button>
+       Add Emergency Contact:
+      <form id="add_contact">
+        <input v-model="name" type="text" placeholder="Name"/>
+        <input v-model="phone" type="text" placeholder="Phone"/>
+        <button v-on:click="add">Add</button>
+      </form>
+      
+      <button id="reset_contacts">Reset Emergency Contacts</button>
     </div>
     <script src="homescreen.js"></script>
   </body>
