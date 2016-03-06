@@ -4,6 +4,20 @@ body {
   height: 100%;
 }
 
+#back {
+
+  width: 100%;
+  display: block;
+  margin: 10px;
+  border: 1px solid #DDD;
+  background-color:rgb(98, 46, 224);
+  font-family: "Calibri", "arial black", "arial", sans-serif;
+  color: white;
+  font-weight:bolder;
+  font-size: 18px;
+  height: 50px;
+}
+
 #menu button {
   border: 10px solid rgb(98, 46, 224);
   background-color:rgb(98, 46, 224);
@@ -69,6 +83,10 @@ h1 {
   .object {
     width: 100%;
   }
+  
+  .display .object.display {
+    background-size: cover;
+  }
 }
 
 .display .object {
@@ -85,7 +103,7 @@ h1 {
   height: 100%;
   width: 100%;
   display: block;
-  background-size: cover;
+
 }
 
 .object.display .info {
@@ -157,9 +175,13 @@ h1 {
   border: 1px solid #eee;
   padding: 10px;
   margin: 10px;
+  font-family: "Calibri", "arial black", "arial", sans-serif;
+  font-size: 18px; 
 }
 
 #settings_screen form button, #settings_screen form input {
   width: 100%;
   margin-bottom: 5px;
+  font-family: "Calibri", "arial black", "arial", sans-serif;
+  font-size: 18px; 
 } 
