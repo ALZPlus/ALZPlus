@@ -28,19 +28,26 @@ class CollectionManager {
     
     this.add = function(event) {
       event.preventDefault();
-      var reader = new FileReader();
-      reader.readAsDataURL(this.$el.querySelector('input[type=file]').files[0]);
-      reader.addEventListener("load", function () {
-        var new_object = {};
-        config.fields.forEach(function (property) {
-          new_object[property] = this[property];
-        }.bind(this));
-        if(config.photo){
+      if(config.photo){
+        var reader = new FileReader();
+        reader.readAsDataURL(this.$el.querySelector('input[type=file]').files[0]);
+        reader.addEventListener("load", function () {
+          var new_object = {};
+          config.fields.forEach(function (property) {
+            new_object[property] = this[property];
+          }.bind(this));
           new_object.photo = reader.result
-        }
-        manager.objects.push(new_object);
-        localStorage.setItem(config.name, JSON.stringify(manager.objects));
-      }.bind(this), false);
+          manager.objects.push(new_object);
+          localStorage.setItem(config.name, JSON.stringify(manager.objects));
+        }.bind(this), false);
+      } else {
+          var new_object = {};
+          config.fields.forEach(function (property) {
+            new_object[property] = this[property];
+          }.bind(this));
+          manager.objects.push(new_object);
+          localStorage.setItem(config.name, JSON.stringify(manager.objects));
+      }
     }
 
     this.form = new Vue({ 

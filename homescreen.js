@@ -8,6 +8,10 @@ var settings_button=document.getElementById("settings")
 
 var current_screen = null
 
+Vue.filter('tel', function (value) {
+  return 'tel://' + value
+})
+
 function switchToScreen(screen_name){
   current_screen = document.getElementById(screen_name)
   main_menu.style.display = "none"
@@ -62,7 +66,7 @@ var contacts = new CollectionManager({
   name: 'contacts',
   fields: ['name', 'phone'],
   photo: false,
-  list: document.querySelector('#contacts_screen'),
+  list: document.querySelector('#help_screen'),
   new_form: document.querySelector('#add_contact')
 })
 

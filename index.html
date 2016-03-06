@@ -57,13 +57,17 @@
     </main_menu>
 
     <div id="help_screen" style="display:none">
-      <div class="emergency_contact" v-for="object in objects">
-        <div class="name">{{object.name }}</div>
-        <div class="phone">{{object.phone}}</div>
-      </div>
+      <a v-bind:href="object.phone | tel" class="emergency_contact" v-for="object in objects">
+        {{object.name }}<br/>{{object.phone}}
+      </a>
+      
+      <a href="tel://922">
+        Emergency<br/> 911
+      </a>
     </div>
     
     <div id="settings_screen" style="display:none">
+      <div>
       Add Person:
       <form id="add_person">
         <input v-model="name"  type="text" placeholder="Name" />
@@ -73,6 +77,8 @@
       </form>
 
       <button id="reset_people">Reset People</button>
+      </div>
+      <div>
       Add Thing:
       <form id="add_thing">
         <input v-model="name" type="text" placeholder="Name"/>
@@ -81,6 +87,9 @@
       </form>
 
       <button id="reset_things">Reset Things</button>
+      
+      </div>
+      <div>
        Add Emergency Contact:
       <form id="add_contact">
         <input v-model="name" type="text" placeholder="Name"/>
@@ -89,6 +98,7 @@
       </form>
       
       <button id="reset_contacts">Reset Emergency Contacts</button>
+      </div>
     </div>
     <script src="homescreen.js"></script>
   </body>
