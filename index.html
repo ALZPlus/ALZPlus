@@ -8,6 +8,7 @@
       <meta http-equiv="Pragma" content="no-cache"/>
       <meta http-equiv="Expires" content="-1"/>
       <script src="vue.js"></script>
+      <script src="sugar.js"></script>
       <script src="collection_manager.es6.js"></script>
   </head>
   <body>
@@ -68,6 +69,21 @@
 
     </div>
     
+    <div id="about_screen" style="display:none">
+        <div class="" v-for="person in objects">
+            <img v-bind:src="person.photo"/>
+            <div>Name: {{person.name }}</div>
+            <div>Birthday: {{person.birthday}}</div>
+            <div>Address: {{person.address }}</div>
+            <div>Allergies: {{person.allergies }}</div>
+            <div>Caregiver: {{person.caregiver_name }}</div>
+            <div>Address: {{person.caregiver_address }}</div>
+            <a v-bind:href="person.caregiver_phone | tel">Phone: {{person.caregiver_phone }}</a>
+        </div>
+      </form>
+      
+    </div>
+    
     <div id="settings_screen" style="display:none">
       <div>
       Add Person:
@@ -100,6 +116,23 @@
       </form>
       
       <button id="reset_contacts">Reset Emergency Contacts</button>
+      </div>
+      
+      <div>
+       Add About Me:
+      <form id="add_about_me">
+        <input type="file" id="file"/>
+        <input v-model="name" type="text" placeholder="Name"/>
+        <input v-model="birthday" type="date" placeholder="Birthday"/>
+        <input v-model="address" type="text" placeholder="Address"/>
+        <input v-model="allergies" type="text" placeholder="Allergies"/>
+        <input v-model="caregiver_name" type="text" placeholder="Caregiver"/>
+        <input v-model="caregiver_address" type="text" placeholder="Caregiver Address"/>
+        <input v-model="caregiver_phone" type="text" placeholder="Caregiver Phone"/>
+        <button v-on:click="add">Add</button>
+      </form>
+      
+      <button id="reset_about_me">Reset About Me</button>
       </div>
     </div>
     <script src="homescreen.js"></script>

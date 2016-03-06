@@ -89,6 +89,8 @@ h1 {
   }
 }
 
+
+
 .display .object {
   display: none;
 }
@@ -151,6 +153,12 @@ h1 {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (max-width: 450px) {
+  #menu [id=help], #menu [id=medical] {
+    width: 100%;
+  }
 }
 
 #help_screen > a {

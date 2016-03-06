@@ -4,6 +4,7 @@ var back= document.getElementById("back")
 var people_button = document.getElementById("people")
 var things_button= document.getElementById ("things")
 var help_button = document.getElementById("help")
+var about_button = document.getElementById("medical")
 var settings_button=document.getElementById("settings")
 
 var clock = document.getElementById('clock')
@@ -11,7 +12,7 @@ var current_screen = null
 
 setInterval(function(){
   var now = new Date()
-  clock.textContent = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+  clock.textContent = now.format('{HH}:{mm}:{ss} {AM}')
 }, 1000)
 
 Vue.filter('tel', function (value) {
@@ -40,6 +41,11 @@ help_button.addEventListener("click", function() {
 settings_button.addEventListener("click", function (){
   switchToScreen('settings_screen')
 })
+
+about_button.addEventListener("click", function (){
+  switchToScreen('about_screen')
+})
+
 
 back.addEventListener("click", function() {
   main_menu.style.display = ""
@@ -78,6 +84,16 @@ var contacts = new CollectionManager({
 
 contacts.restore()
 
+var about_me = new CollectionManager({
+  name: 'about_me',
+  fields: ['name', 'address', 'allergies', 'birthday', 'caregiver_name', 'caregiver_address', 'caregiver_phone'],
+  photo: true,
+  list: document.querySelector('#about_screen'),
+  new_form: document.querySelector('#add_about_me')
+})
+
+about_me.restore()
+
 var reset_people_button = document.getElementById("reset_people")
 reset_people_button.addEventListener('click', function(event){
   event.preventDefault()
@@ -100,4 +116,12 @@ reset_contacts_button.addEventListener('click', function(event){
   
   localStorage.removeItem("contacts")
   alert("Contacts List Reset")
+})
+
+var reset_about_me_button = document.getElementById("reset_about_me")
+reset_about_me_button.addEventListener('click', function(event){
+  event.preventDefault()
+  
+  localStorage.removeItem("about_me")
+  alert("About Me Reset")
 })
